@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<!-- This is a sample fripple using canvas and javascript. -->
+<body>
+
+  <!-- This is the HTML5 Canvas tag -->
+  <canvas id="fripple1" width="100" height="100" style="border:1px solid #c3c3c3;">
+    Your browser does not support the HTML5 canvas tag.
+  </canvas>
+
+  <script>
+
+  /***
+  /*
+  /* Drawing goes in this script.
+  /*
+  ***/
+
+  var canvas = document.getElementById("fripple1");
+  var ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#FF000";
+  ctx.fillRect(50,50,15,15);
+  </script>
+
+</body>
+</html>
