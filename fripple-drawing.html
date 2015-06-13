@@ -51,6 +51,13 @@
       ctx.bezierCurveTo(54,84,54,84,64,83)
       // stroke eyes and smile
       ctx.stroke();
+
+      // nose
+      ctx.fillStyle = "blue";
+      ctx.moveTo(64,64);
+      ctx.arc(64,64,5,0,Math.PI*2,true);
+
+      ctx.fill();
     }
 
   }
