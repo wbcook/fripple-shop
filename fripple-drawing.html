@@ -8,6 +8,11 @@
     Your browser does not support the HTML5 canvas tag.
   </canvas>
 
+
+  <canvas id="canvas2" width="128" height="128" style="border:1px solid #c3c3c3;">
+    Your browser does not support the HTML5 canvas tag.
+  </canvas>
+
   <script>
 
   /***
@@ -59,11 +64,76 @@
       nose.arc(93,65,10,0,Math.PI*2,true);
       ctx.fill(nose);
 
+      // hair
+      var hair = new Path2D();
+      hair.moveTo(55,50);
+      hair.bezierCurveTo(50,35,60,35,45,40);
+      hair.moveTo(63,47);
+      hair.bezierCurveTo(70,47,70,35,75,35);
+      ctx.stroke(hair);
+
+    }
+
+  }
+
+  function draw2() {
+
+    var canvas2 = document.getElementById("canvas2");
+    if (canvas2.getContext){
+
+      var ctx = canvas2.getContext("2d");
+
+      // body color
+      ctx.fillStyle = "red";
+      ctx.beginPath();
+
+      // body
+      // bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
+      ctx.moveTo(32,64);
+      // bottom
+      ctx.bezierCurveTo(16,96,96,96,96,64);
+      // top
+      ctx.bezierCurveTo(16,32,96,32,32,64);
+      // stroke and fill body
+      ctx.fill();
+
+      // left eye
+      // arc(x, y, radius, startAngle, endAngle, anticlockwise)
+      ctx.moveTo(54,64);
+      ctx.arc(54,64,1,0,Math.PI*2,true);
+
+      // right eye
+      ctx.moveTo(74,64);
+      ctx.arc(74,64,1,0,Math.PI*2,true);
+
+      // smile
+      ctx.moveTo(50,74);
+      ctx.bezierCurveTo(54,84,54,84,64,83)
+      // stroke eyes and smile
+      ctx.stroke();
+
+      // nose
+      var nose = new Path2D();
+      ctx.fillStyle = "blue";
+      nose.moveTo(93,65);
+      nose.arc(93,65,10,0,Math.PI*2,true);
+      ctx.fill(nose);
+
+      // hair
+      var hair = new Path2D();
+      hair.moveTo(55,50);
+      hair.bezierCurveTo(50,35,60,35,45,40);
+      hair.moveTo(63,47);
+      hair.bezierCurveTo(70,47,70,35,75,35);
+      ctx.stroke(hair);
+
     }
 
   }
 
   draw();
+
+  draw2();
 
   </script>
 
